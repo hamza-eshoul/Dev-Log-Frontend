@@ -15,8 +15,10 @@ const queryClient = new QueryClient({
 });
 
 const base_url = import.meta.env.VITE_API_BASE_URL;
+const apiKey = import.meta.env.VITE_API_KEY;
 
 axios.defaults.baseURL = base_url;
+axios.defaults.headers.common["x-api-key"] = apiKey;
 
 const App = () => {
   return (
