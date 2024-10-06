@@ -12,7 +12,6 @@ import Error from "@/components/Error";
 
 const RecentPosts = () => {
   const { isPending, error, data: blogPosts } = useGetAllBlogPosts();
-  console.log("DATA", blogPosts);
 
   if (isPending) {
     return <Loading />;
@@ -26,9 +25,9 @@ const RecentPosts = () => {
     <section className="mb-20 flex flex-col gap-4">
       <h2 className="text-2xl font-bold">Recent blog posts</h2>
 
-      {blogPosts.data.data.length > 0 ? (
+      {blogPosts.data.length > 0 ? (
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-          {blogPosts.data.data.map((post: BlogPost) => (
+          {blogPosts.data.map((post: BlogPost) => (
             <RecentPostCard key={post.id} post={post} />
           ))}
         </div>
