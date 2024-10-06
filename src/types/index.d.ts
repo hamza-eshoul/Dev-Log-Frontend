@@ -1,6 +1,6 @@
 export interface BlogPost {
   id: number;
-  time_to_read: string;
+  time_to_read: number;
   title: string;
   description: string;
   author: string;
@@ -13,7 +13,6 @@ export interface BlogPost {
     }[];
   };
   created_at: Date;
-  updated_at: Date;
 }
 
 export interface ContentItem {

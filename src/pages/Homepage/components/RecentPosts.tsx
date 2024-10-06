@@ -12,6 +12,7 @@ import Error from "@/components/Error";
 
 const RecentPosts = () => {
   const { isPending, error, data: blogPosts } = useGetAllBlogPosts();
+  console.log("DATA", blogPosts);
 
   if (isPending) {
     return <Loading />;
