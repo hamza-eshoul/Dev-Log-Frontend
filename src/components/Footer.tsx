@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="rounded-t-lg bg-[#111926] px-3 pb-8 pt-10 text-white sm:px-6 sm:pb-12 sm:pt-16">
+    <footer className="bg-[#111926] px-3 pb-8 pt-10 text-white sm:px-6 sm:pb-12 sm:pt-16">
       <div className="md:px-10 lg:px-16">
         <div className="mb-5 px-4 text-center sm:mb-12 sm:px-6 md:px-8">
           <h2 className="mb-3 text-2xl font-bold leading-tight sm:text-3xl md:text-4xl">

@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 // hooks
@@ -14,7 +13,6 @@ import Error from "@/components/Error";
 
 const BlogPost = () => {
   const { id: blogPostId } = useParams();
-  const [isArtificialLoading, setIsArtificialLoading] = useState(false);
 
   const {
     isPending,
@@ -22,18 +20,7 @@ const BlogPost = () => {
     data: blogPost,
   } = useGetBlogPost(blogPostId as string);
 
-  useEffect(() => {
-    if (!isPending && !error) {
-      setIsArtificialLoading(true);
-      const timer = setTimeout(() => {
-        setIsArtificialLoading(false);
-      }, 1500);
-
-      return () => clearTimeout(timer);
-    }
-  }, [isPending, error]);
-
-  if (isPending || isArtificialLoading) {
+  if (isPending) {
     return <Loading className="h-[90vh]" />;
   }
 
@@ -43,8 +30,8 @@ const BlogPost = () => {
 
   return (
     <>
-      <BlogPostHeader data={blogPost?.data.data} />
-      <BlogPostBody data={blogPost?.data.data} />
+      <BlogPostHeader data={blogPost?.data} />
+      <BlogPostBody data={blogPost?.data} />
     </>
   );
 };
